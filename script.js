@@ -1,3 +1,13 @@
+const ROCK = "ROCK";
+const PAPER = "PAPER";
+const SCISSORS = "SCISSORS";
+
+
+/* 
+computerPlay() generates a random number from 1 to 3, 
+and then return either Rock, Paper, or Scissors. 
+1 = Rock, 2 = Paper, 3 = Scissors.
+*/
 function computerPlay() {
     let randomNum = Math.floor(Math.random() * 3) + 1;
     if (randomNum === 1) {
@@ -9,8 +19,10 @@ function computerPlay() {
     }
 }
 
+// playRound() takes in the player's throw and the computer's throw, and returns the result.
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection === "ROCK") {
+    // conditions if player selects Rock.
+    if (playerSelection === ROCK) {
         console.log("You threw Rock.");
         console.log("Player 2 threw " + computerSelection);
         if (computerSelection === "Rock") {
@@ -22,7 +34,8 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
-    else if (playerSelection === "PAPER") {
+    // conditions if player selects Paper.
+    else if (playerSelection === PAPER) {
         console.log("You threw Paper.");
         console.log("Player 2 threw " + computerSelection);
         if (computerSelection === "Rock") {
@@ -34,7 +47,8 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
-    else if (playerSelection === "SCISSORS") {
+    // conditions if player selects Scissors.
+    else if (playerSelection === SCISSORS) {
         console.log("You threw Scissors.");
         console.log("Player 2 threw " + computerSelection);
         if (computerSelection === "Rock") {
@@ -46,11 +60,13 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
+    // if player does not throw Rock, Paper, or Scissors, returns as not thrown.
     else {
         return "You did not throw.";
     }
 }
 
+// game() runs the game of Rock, Paper, Scissors for 5 rounds.
 function game() {
     let playerThrow;
     let count = 0;
