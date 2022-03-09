@@ -3,9 +3,46 @@
     <head>
         <title>Rock Paper Scissors</title>
         <meta charset="UTF-8">
-        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
     </head>
     <body>
-        <h1>Rock Paper Scissors</h1>
+        <div id="game-container">
+            <h1 id="title">Rock, Paper, Scissors!</h1>
+            <div id="arena">
+                <div id="computer-side">
+                    <div class="com-hand" id="com-rock"><img class="com-select-image" src="images/vectorstock_25169737.png"></div>
+                    <div class="com-hand" id="com-paper"><img class="com-select-image" src="images/vectorstock_25169737 copy 2.png"></div>
+                    <div class="com-hand" id="com-scissors"><img class="com-select-image" src="images/vectorstock_25169737 copy.png"></div>
+                </div>
+                <div id="score-result">
+                    <div class="score">
+                        <h1 id="p1-score">0</h1>
+                    </div>
+                    <div id="result">
+                        <h3 id="result1">(Results)</h3>
+                        <h3 id="result2"></h3>
+                    </div>
+                    <div class="score">
+                        <h1 id="pc-score">0</h1>
+                    </div>
+                </div>
+                <div id="player-side">
+                    <button id="rock" class="btn"><img class="select-image" src="images/vectorstock_25169737.png"></button>
+                    <button id="paper" class="btn"><img class="select-image" src="images/vectorstock_25169737 copy 2.png"></button>
+                    <button id="scissors" class="btn"><img class="select-image" src="images/vectorstock_25169737 copy.png"></button>
+                </div>
+            </div>
+            <div id="question">
+                <h2>What will you throw </h2>
+                <h1>?</h1>
+            </div>
+        </div>
+
+        <div id="end-screen">
+            <h1 id="win-lose">You Won!</h1>
+            <button id="play-again">Play Again</button>
+        </div>
+        <footer></footer>
     </body>
 </html>

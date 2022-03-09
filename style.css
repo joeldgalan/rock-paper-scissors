@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(80deg, #555, #222);
+    font-family: 'Fredoka One', cursive;
+    color: aquamarine;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-container {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    filter: blur(0);
+}
+
+#title {
+    padding: 0;
+    margin: 0;
+    font-size: 4rem;
+}
+
+#arena {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#computer-side {
+    display: flex;
+    justify-content: center;
+    border: 3px solid #777;
+    border-radius: 10px;
+    background: linear-gradient(#7fffd4, #52b191);
+    width: 90%;
+}
+
+.com-hand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none;
+    font-size: 1.5rem;
+    text-align: center;
+    background: linear-gradient(#dc143c, #b61636);
+    border: 3px solid #777;
+    border-radius: 12px;
+    width: 8rem;
+    height: 8rem;
+    margin: 2rem;
+}
+
+#result {
+    border-top: 4px solid crimson;
+    border-bottom: 4px solid aquamarine;
+    border-radius: 10px;
+    width: 20rem;
+    height: 5rem;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    overflow-y: scroll;
+}
+
+#result > h3 {
+    padding: 0;
+    margin: 0px;
+}
+
+#score-result {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+#player-side {
+    border: 3px solid #777;
+    border-radius: 10px;
+    background: linear-gradient(#dc143c, #b61636);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    font-size: 1.5rem;
+    text-align: center;
+    background: linear-gradient(#7fffd4, #52b191);
+    border: 3px solid #777;
+    border-radius: 12px;
+    width: 10rem;
+    height: 10rem;
+    margin: 2rem;
+    transition-duration: 0.2s;
+    vertical-align: top;
+}
+
+#paper {
+    padding-right: 8px;
+}
+
+#com-paper  > img{
+    padding-right: 10px;
+}
+
+.btn:hover {
+    box-shadow: 0 12px 20px 10px rgba(0,0,0,0.25), 0 17px 50px 5px rgba(0,0,0,0.20);
+    transform: scale(1.05, 1.05) translateY(-10px);
+}
+
+.com-select-image {
+    padding: 0;
+    margin: 0;
+    height: 4rem;
+    transform: rotate(180deg);
+}
+
+.select-image {
+    padding: 0;
+    margin: 0;
+    height: 5rem;
+}
+
+#question {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#question > h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+#end-screen {
+    border-radius: 10px;
+    border: 2px solid #cfcece;
+    background: #f7f7f7;
+    color: black;
+    height: 15rem;
+    width: 30rem;
+    position: absolute;
+    left: 5000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    }
+
+#end-screen > button {
+    width: 6rem;
+    height: 2rem;
+}
