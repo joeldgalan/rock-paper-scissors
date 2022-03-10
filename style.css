@@ -88,17 +88,20 @@ body {
     align-items: center;
 }
 
+#pc-score {
+    color: #fc2852;
+}
+
 #player-side {
     border: 3px solid #777;
     border-radius: 10px;
     background: linear-gradient(#dc143c, #b61636);
 }
 
-.btn {
+.player-btn {
     display: inline-block;
     padding: 0;
     cursor: pointer;
-    border: none;
     font-size: 1.5rem;
     text-align: center;
     background: linear-gradient(#7fffd4, #52b191);
@@ -117,11 +120,6 @@ body {
 
 #com-paper  > img{
     padding-right: 10px;
-}
-
-.btn:hover {
-    box-shadow: 0 12px 20px 10px rgba(0,0,0,0.25), 0 17px 50px 5px rgba(0,0,0,0.20);
-    transform: scale(1.05, 1.05) translateY(-10px);
 }
 
 .com-select-image {
@@ -156,7 +154,6 @@ body {
     height: 15rem;
     width: 30rem;
     position: absolute;
-    left: 5000px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -167,4 +164,26 @@ body {
 #end-screen > button {
     width: 6rem;
     height: 2rem;
+}
+
+.thrown {
+    transform: scale(0.9);
+    border-color: white;
+    box-shadow: 0 0 1rem white;
+}
+
+.btn {
+    transition: all .07s ease;
+}
+
+footer {
+    background: #dbdbdb;
+    color: grey;
+    font-size: 0.9rem;
+    width: 100vw;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

@@ -11,26 +11,27 @@
             <h1 id="title">Rock, Paper, Scissors!</h1>
             <div id="arena">
                 <div id="computer-side">
-                    <div class="com-hand" id="com-rock"><img class="com-select-image" src="images/vectorstock_25169737.png"></div>
-                    <div class="com-hand" id="com-paper"><img class="com-select-image" src="images/vectorstock_25169737 copy 2.png"></div>
-                    <div class="com-hand" id="com-scissors"><img class="com-select-image" src="images/vectorstock_25169737 copy.png"></div>
+                    <div class="com-hand btn" id="com-rock"><img class="com-select-image" src="images/vectorstock_25169737.png"></div>
+                    <div class="com-hand btn" id="com-paper"><img class="com-select-image" src="images/vectorstock_25169737 copy 2.png"></div>
+                    <div class="com-hand btn" id="com-scissors"><img class="com-select-image" src="images/vectorstock_25169737 copy.png"></div>
                 </div>
                 <div id="score-result">
                     <div class="score">
                         <h1 id="p1-score">0</h1>
                     </div>
                     <div id="result">
-                        <h3 id="result1">(Results)</h3>
-                        <h3 id="result2"></h3>
+                        <h3 id="result1"></h3>
+                        <h3 id="result2">(Results)</h3>
+                        <h3 id="result3"></h3>
                     </div>
                     <div class="score">
                         <h1 id="pc-score">0</h1>
                     </div>
                 </div>
                 <div id="player-side">
-                    <button id="rock" class="btn"><img class="select-image" src="images/vectorstock_25169737.png"></button>
-                    <button id="paper" class="btn"><img class="select-image" src="images/vectorstock_25169737 copy 2.png"></button>
-                    <button id="scissors" class="btn"><img class="select-image" src="images/vectorstock_25169737 copy.png"></button>
+                    <button id="rock" class="player-btn btn"><img class="select-image" src="images/vectorstock_25169737.png"></button>
+                    <button id="paper" class="player-btn btn"><img class="select-image" src="images/vectorstock_25169737 copy 2.png"></button>
+                    <button id="scissors" class="player-btn btn"><img class="select-image" src="images/vectorstock_25169737 copy.png"></button>
                 </div>
             </div>
             <div id="question">
@@ -43,6 +44,18 @@
             <h1 id="win-lose">You Won!</h1>
             <button id="play-again">Play Again</button>
         </div>
-        <footer></footer>
+
+        <footer>
+            <p>Created by <span>Joel Galan</span></p>
+        </footer>
+
+        <audio id="win-game-sound" src="sounds/win-game.wav"></audio>
+        <audio id="lose-game-sound" src="sounds/lose-game.wav"></audio>
+        <audio id="win-sound" src="sounds/win.wav"></audio>
+        <audio id="lose-sound" src="sounds/lose.wav"></audio>
+        <audio id="tie-sound" src="sounds/tie.mp3"></audio>
+        <audio id="rock-sound" src="sounds/rock.wav"></audio>
+        <audio id="paper-sound" src="sounds/paper.wav"></audio>
+        <audio id="scissors-sound" src="sounds/scissors.wav"></audio>
     </body>
 </html>
