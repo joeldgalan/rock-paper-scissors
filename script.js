@@ -16,6 +16,7 @@ const comRock = document.querySelector("#com-rock");
 const comPaper = document.querySelector("#com-paper");
 const comScissors = document.querySelector("#com-scissors");
 
+// sound effects
 const winGameAudio = document.querySelector("#win-game-sound");
 const loseGameAudio = document.querySelector("#lose-game-sound");
 const winRoundAudio = document.querySelector("#win-sound");
@@ -25,11 +26,11 @@ const rockAudio = document.querySelector("#rock-sound");
 const paperAudio = document.querySelector("#paper-sound");
 const scissorsAudio = document.querySelector("#scissors-sound");
 
-/* 
-computerPlay() generates a random number from 1 to 3, 
+
+
+/* computerPlay() generates a random number from 1 to 3, 
 and then return either Rock, Paper, or Scissors. 
-1 = Rock, 2 = Paper, 3 = Scissors.
-*/
+1 = Rock, 2 = Paper, 3 = Scissors. */
 function computerPlay() {
     let randomNum = Math.floor(Math.random() * 3) + 1;
     if (randomNum === 1) {
@@ -41,32 +42,44 @@ function computerPlay() {
     }
 }
 
-// playRound() takes in the player's throw and the computer's throw, and returns the result.
+
+// playRound() takes in the player's throw and the computer's throw, 
+// as well as the button clicked(for effects), and displays the result.
 function playRound(btnClicked, playerSelection, computerSelection) {
 
     // conditions if player selects Rock.
     if (playerSelection === ROCK) {
         result1.textContent = "You threw Rock.";
         result2.textContent = "Player 2 threw " + computerSelection + ".";
+        // sound effect
         rockAudio.currentTime = 0;
         rockAudio.play();
+        // creates button press effect for selected button
         btnClicked.classList.add("thrown");
+        
+        // figures out the result and displays according result.
         if (computerSelection === "Rock") {
             result3.textContent = "Tie! You both threw Rock.";
+            // sound effect
             tieAudio.currentTime = 0;
             tieAudio.play();
+            // creates button press effect for pc
             comRock.classList.add("thrown");
         } else if (computerSelection === "Paper") {
             result3.textContent = "You Lose! Paper beats Rock.";
+            // sound effect
             loseRoundAudio.currentTime = 0;
             loseRoundAudio.play();
+            // creates button press effect for pc
             comPaper.classList.add("thrown");
             pcScore++;
             computerScore.textContent = pcScore;
         } else if (computerSelection === "Scissors") {
             result3.textContent = "You Win! Rock beats Scissors.";
+            // sound effect
             winRoundAudio.currentTime = 0;
             winRoundAudio.play();
+            // creates button press effect for pc
             comScissors.classList.add("thrown");
             p1Score++;
             playerScore.textContent = p1Score;
@@ -77,9 +90,12 @@ function playRound(btnClicked, playerSelection, computerSelection) {
     else if (playerSelection === PAPER) {
         result1.textContent = "You threw Paper.";
         result2.textContent = "Player 2 threw " + computerSelection + ".";
+        // sound effect
         paperAudio.currentTime = 0;
         paperAudio.play();
+        // creates button press effect for selected button
         btnClicked.classList.add("thrown");
+
         if (computerSelection === "Rock") {
             result3.textContent = "You Win! Paper beats Rock.";
             winRoundAudio.currentTime = 0;
@@ -106,9 +122,12 @@ function playRound(btnClicked, playerSelection, computerSelection) {
     else if (playerSelection === SCISSORS) {
         result1.textContent = "You threw Scissors.";
         result2.textContent = "Player 2 threw " + computerSelection + ".";
+        // sound effect
         scissorsAudio.currentTime = 0;
         scissorsAudio.play();
+        // creates button press effect for selected button
         btnClicked.classList.add("thrown");
+
         if (computerSelection === "Rock") {
             result3.textContent = "You Lose! Rock beats Scissors.";
             loseRoundAudio.currentTime = 0;
@@ -132,7 +151,8 @@ function playRound(btnClicked, playerSelection, computerSelection) {
     }
 }
 
-// resetGame() resets the scores to 0 and starts again if player hits "Play Again"
+
+// resetGame() resets the scores to 0 and starts game again if player hits "Play Again"
 function resetGame() {
     if (gameEnd === true) {
         p1Score = 0;
@@ -148,20 +168,33 @@ function resetGame() {
     }
 }
 
+
+// Removes "thrown" class, completing button animation
+function removeTransition() {
+    const thrownBtns = document.querySelectorAll(".thrown");
+    thrownBtns.forEach((btn) => {
+        btn.classList.remove('thrown');
+    });
+}
+
+
 // game() runs the game of Rock, Paper, Scissors for 5 rounds.
 function game() {
 
     const playAgain = document.querySelector("#play-again");
     const buttons = document.querySelectorAll('button');
     buttons.forEach((button) => {
-        console.log(button);
+
+        // Event listeners for rock paper scissors buttons.
         button.addEventListener('click', () => {
+
             if (gameEnd === false) {
                 playerSelection = button.id;
                 computerSelection = computerPlay();
 
                 playRound(button, playerSelection, computerSelection);
 
+                // detects when a player hits 5 points. Shows end screen.
                 if (p1Score >= 5 || pcScore >= 5) {
                     gameEnd = true;
 
@@ -171,24 +204,21 @@ function game() {
                     endScreen.style.top = "auto";
                     if (p1Score > pcScore) {
                         winLoseStatement.textContent = "You Won!"
+                        // sound effect
                         winGameAudio.play();
                     } else if (pcScore > p1Score) {
                         winLoseStatement.textContent = "You Lost!"
+                        // sound effect
                         loseGameAudio.play();
                     }
                 }
             }
         });
+        // event listener to remove button effects
         button.addEventListener('transitionend', removeTransition);
     });
+    // event listener for "Play Again" button
     playAgain.addEventListener('click', resetGame)
 }
-
-function removeTransition() {
-    const thrownBtns = document.querySelectorAll(".thrown");
-    thrownBtns.forEach((btn) => {
-        btn.classList.remove('thrown');
-    });
-  }
 
 game();
