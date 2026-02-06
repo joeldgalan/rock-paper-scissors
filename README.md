@@ -1,3 +1,3 @@
 # rock-paper-scissors
-I will be making a rock paper scissors game, showcasing some of my programming skills as well as my CSS/design  and DOM manipulation skills.
+This a game of rock-paper-scissors playable against a bot using plain Javascript to manipulate the DOM, and HTML and CSS to implement a simple UI.
 [HERE](https://joeldgalan.github.io/rock-paper-scissors/)
